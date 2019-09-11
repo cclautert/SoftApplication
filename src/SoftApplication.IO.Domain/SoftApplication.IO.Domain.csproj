@@ -12,4 +12,8 @@
     <ProjectReference Include="..\SoftApplication.IO.Domain.Core\SoftApplication.IO.Domain.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\EventHandlers\" />
+  </ItemGroup>
+
 </Project>
