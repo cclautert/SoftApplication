@@ -15,6 +15,11 @@ namespace SoftApplication.IO.Domain.Models
             _ValorCalculado = ValorCalculado;            
         }
 
+        private Evento()
+        {
+
+        }
+
         private string _Nome;
         public string Nome {
             get { return _Nome; }
@@ -55,5 +60,35 @@ namespace SoftApplication.IO.Domain.Models
                 .NotEmpty().WithMessage("O ValorCalculado não pode ser zero");
         }
         #endregion
+
+        //Factory
+        public static class EventoFactory
+        {
+            public static Evento NovoEvento(Guid pId, string pNome, decimal pValorCalculado)
+            {
+                var objEvento = new Evento()
+                {
+                    Id = pId,
+                    Nome = pNome,
+                    ValorCalculado = pValorCalculado
+                };
+
+                return objEvento;
+            }
+            
+            public static Evento NovoEventoCompleto(Guid pId, string pNome, string pDescricao, DateTime pDataExecucao, decimal pValorCalculado)
+            {
+                var objEvento = new Evento()
+                {
+                    Id = pId,
+                    Nome = pNome,
+                    Descricao = pDescricao,
+                    DataExecucao = pDataExecucao,
+                    ValorCalculado = pValorCalculado
+                };
+
+                return objEvento;
+            }
+        }
     }
 }

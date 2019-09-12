@@ -1,4 +1,4 @@
-﻿using SoftApplication.IO.Domain.Repository;
+﻿using SoftApplication.IO.Domain.Interfaces;
 
 namespace SoftApplication.IO.Domain.Models.Repository
 {
